@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Квитанция{% endblock %}
+{% block content %}
+<h1 class="mt-4">Квитанция о приеме заказа</h1>
+<p><strong>Номер заказа:</strong> {{ order.id }}</p>
+<p><strong>Дата заказа:</strong> {{ order.order_date }}</p>
+<p><strong>Клиент:</strong> {{ order.client.last_name }}</p>
+<p><strong>Адрес клиента:</strong> {{ order.client.address }}</p>
+<p><strong>Телефон клиента:</strong> {{ order.client.phone }}</p>
+<p><strong>Груз:</strong> {{ order.cargo }}</p>
+<p><strong>Откуда:</strong> {{ order.from_address }}</p>
+<p><strong>Куда:</strong> {{ order.to_address }}</p>
+<p><strong>Стоимость:</strong> {{ order.cost }}</p>
+<p><strong>Автомобиль:</strong> {{ order.car.brand }} ({{ order.car.registration_number }})</p>
+<p><strong>Водитель:</strong> {{ order.driver.last_name }}</p>
+{% endblock %}

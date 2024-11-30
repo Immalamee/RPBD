@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Добавить заказ{% endblock %}
+{% block content %}
+<h1 class="mt-4">Добавить заказ</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.cargo.label }} {{ form.cargo(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.from_address.label }} {{ form.from_address(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.to_address.label }} {{ form.to_address(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.completion_date.label }} {{ form.completion_date(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.cost.label }} {{ form.cost(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.car_id.label }} {{ form.car_id(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.driver_id.label }} {{ form.driver_id(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.client_id.label }} {{ form.client_id(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}
