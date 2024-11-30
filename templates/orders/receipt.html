@@ -4,6 +4,7 @@
 <h1 class="mt-4">Квитанция о приеме заказа</h1>
 <p><strong>Номер заказа:</strong> {{ order.id }}</p>
 <p><strong>Дата заказа:</strong> {{ order.order_date }}</p>
+<p><strong>Дата выполнения заказа:</strong> {{ order.completion_date }}</p>
 <p><strong>Клиент:</strong> {{ order.client.last_name }}</p>
 <p><strong>Адрес клиента:</strong> {{ order.client.address }}</p>
 <p><strong>Телефон клиента:</strong> {{ order.client.phone }}</p>
@@ -13,4 +14,7 @@
 <p><strong>Стоимость:</strong> {{ order.cost }}</p>
 <p><strong>Автомобиль:</strong> {{ order.car.brand }} ({{ order.car.registration_number }})</p>
 <p><strong>Водитель:</strong> {{ order.driver.last_name }}</p>
+<a href="{{ url_for('order_receipt_pdf', order_id=order.id) }}" class="btn btn-primary">
+    Скачать квитанцию в PDF
+</a>
 {% endblock %}

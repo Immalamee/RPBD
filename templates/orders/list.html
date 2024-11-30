@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="mt-4">Список заказов</h1>
 <a href="{{ url_for('add_order') }}" class="btn btn-primary mb-3">Добавить заказ</a>
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>ID</th>
@@ -35,4 +35,8 @@
         {% endfor %}
     </tbody>
 </table>
+<form method="get" class="form-inline mb-3">
+    <input type="text" name="search" class="form-control mr-2" placeholder="Поиск по грузу" value="{{ request.args.get('search', '') }}">
+    <button type="submit" class="btn btn-outline-success">Поиск</button>
+</form>
 {% endblock %}

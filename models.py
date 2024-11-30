@@ -40,7 +40,7 @@ class Order(db.Model):
     __table_args__ = {'schema': 'avto'}
 
     id = db.Column(db.Integer, primary_key=True)
-    order_date = db.Column(db.DateTime, default=db.func.current_timestamp())
+    order_date = db.Column(db.DateTime, nullable=False)
     cargo = db.Column(db.String(100), nullable=False)
     from_address = db.Column(db.String(150), nullable=False)
     to_address = db.Column(db.String(150), nullable=False)

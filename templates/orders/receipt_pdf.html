@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квитанция о приеме заказа №{{ order.id }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 14px;
+        }
+        .header, .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Автохозяйство</p>
+    </div>
+    <h1>Квитанция о приеме заказа №{{ order.id }}</h1>
+    <div class="content">
+        <p><strong>Дата заказа:</strong> {{ order.order_date.strftime('%Y-%m-%d %H:%M') }}</p>
+        <p><strong>Дата выполнения:</strong> {{ order.completion_date.strftime('%Y-%m-%d %H:%M') }}</p>
+        <p><strong>Клиент:</strong> {{ order.client.last_name }}</p>
+        <p><strong>Адрес клиента:</strong> {{ order.client.address }}</p>
+        <p><strong>Телефон клиента:</strong> {{ order.client.phone }}</p>
+        <p><strong>Груз:</strong> {{ order.cargo }}</p>
+        <p><strong>Откуда:</strong> {{ order.from_address }}</p>
+        <p><strong>Куда:</strong> {{ order.to_address }}</p>
+        <p><strong>Стоимость:</strong> {{ order.cost }}</p>
+        <p><strong>Автомобиль:</strong> {{ order.car.brand }} ({{ order.car.registration_number }})</p>
+        <p><strong>Водитель:</strong> {{ order.driver.last_name }}</p>
+    </div>
+    <div class="footer">
+        <p>Спасибо за использование наших услуг!</p>
+    </div>
+</body>
+</html>
